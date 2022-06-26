@@ -9,6 +9,8 @@ import UIKit
 
 class CollectoinViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var countryNameLabel: UILabel!
+    
     let dataSource: [String] = ["USA", "Netherlands", "Norway", "Sweden", "Iran"]
     
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ class CollectoinViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Selected Country: \(dataSource[indexPath.row])")
+        countryNameLabel.text = "\(dataSource[indexPath.row])"
     }
 
 }
